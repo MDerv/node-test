@@ -45,6 +45,19 @@ public class TestNode
         return t;
     }
 
+    public void newParent(TestNode parent)
+    {
+        joeMama =  parent;
+    }
 
+    public void newParent(TestNode child)
+    {
+        notJoeMama =  child;
+    }
+
+    public void newParent(T data<T>)
+    {
+        t =  data<T>;
+    }
 
 }
