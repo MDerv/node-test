@@ -5,11 +5,11 @@ Dhruv Sharma
 This is a simple node class
 */
 
-public class TestNode
+public class TestNode<T>
 {
     private TestNode joeMama;
     private TestNode notJoeMama
-    private T t;
+    private T tData;
 
     public TestNode()
     {
@@ -25,7 +25,7 @@ public class TestNode
 
     public TestNode(T data<T>, TestNode parent, TestNode child)
     {
-        t = data<T>;
+        t = data;
         joeMama = parent;
         notJoeMama = child;
     }
@@ -55,9 +55,19 @@ public class TestNode
         notJoeMama =  child;
     }
 
-    public void newParent(T data<T>)
+    public void newParent(T data)
     {
-        t =  data<T>;
+        tData =  data;
+    }
+
+    public String toString()
+    {
+        return "Node: " + t.toString();
+    }
+
+    public boolean equals(TestNode nodeToCompare)
+    {
+        return TestNode.equals(nodeToCompare);
     }
 
 }
