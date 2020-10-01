@@ -1,73 +1,62 @@
 /*
 Dhruv Sharma
 9/30/2020
-9/30/2020
+10/1/2020
 This is a simple node class
 */
 
-public class TestNode<T>
-{
-    private TestNode joeMama;
-    private TestNode notJoeMama
+public class TestNode<T> {
+
+    private TestNode parentNode;
+    private TestNode childNode;
     private T tData;
 
-    public TestNode()
-    {
+    public TestNode() {
         //empty
     }
 
-    public TestNode(T data<T>)
-    {
-        t = data<T>;
-        joeMama = null;
-        notJoeMama = null;
+    public TestNode(T data) {
+        tData = data;
+        parentNode = null;
+        childNode = null;
     }
 
-    public TestNode(T data<T>, TestNode parent, TestNode child)
-    {
-        t = data;
-        joeMama = parent;
-        notJoeMama = child;
+    public TestNode(T data, TestNode parent, TestNode child) {
+        tData = data;
+        parentNode = parent;
+        childNode = child;
     }
 
-    public TestNode getParent ()
-    {
-        return joeMama;
+    public TestNode getParent () {
+        return parentNode;
     }
 
-    public TestNode getChild ()
-    {
-        return notJoeMama;
+    public TestNode getChild () {
+        return childNode;
     }
 
-    public T getT()
-    {
-        return t;
+    public T getTData() {
+        return tData;
     }
 
-    public void newParent(TestNode parent)
-    {
-        joeMama =  parent;
+    public void newParent(TestNode parent) {
+        parentNode =  parent;
     }
 
-    public void newParent(TestNode child)
-    {
-        notJoeMama =  child;
+    public void newChild(TestNode child) {
+        childNode =  child;
     }
 
-    public void newParent(T data)
-    {
+    public void newData(T data) {
         tData =  data;
     }
 
-    public String toString()
-    {
-        return "Node: " + t.toString();
+    public String toString() {
+        return "Node: " + tData.toString();
     }
 
-    public boolean equals(TestNode nodeToCompare)
-    {
-        return TestNode.equals(nodeToCompare);
+    public boolean equals(TestNode nodeToCompare) {
+        return tData == nodeToCompare.getTData();
     }
 
 }
